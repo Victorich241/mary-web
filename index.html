@@ -1,0 +1,228 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Mary ❤️</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="hearts-bg" id="heartsBg"></div>
+
+    <!-- WELCOME ENVELOPE -->
+    <div class="welcome" id="welcome">
+        <div class="envelope" id="envelope">
+            <div class="letter-peek">For Mary ❤️</div>
+            <div class="envelope-body"></div>
+            <div class="flap"></div>
+            <div class="seal">♥</div>
+        </div>
+
+        <h1>Hey Beautiful...</h1>
+        <p>Someone has made something special just for you.</p>
+        <button onclick="openWebsite()">Open Your Surprise 💌</button>
+    </div>
+
+    <!-- MUSIC -->
+    <audio id="music" loop>
+        <source src="our-song.mp3" type="audio/mpeg">
+        <source src="our-song.wav" type="audio/wav">
+    </audio>
+
+    <header>
+        <div class="logo">For Mary ♡</div>
+        <button class="music-btn" onclick="toggleMusic()" id="musicBtn">
+            ♫ Play Our Song
+        </button>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <p class="small-title">A LITTLE WORLD MADE JUST FOR YOU</p>
+            <h1>My Dearest <span>Mary</span></h1>
+            <p class="hero-text">
+                If I could put all the beautiful things I feel into words,
+                this little website would still not be enough.
+                But let me try...
+            </p>
+            <button onclick="scrollToSection('about')">
+                Explore Our Little World ↓
+            </button>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+        <p class="small-title">A THOUGHT FOR YOU</p>
+        <h2>Do you know something, Mary?</h2>
+
+        <div class="glass-card">
+            <p>
+                You are one of those people whose presence makes ordinary
+                moments feel special. I may not always find the perfect
+                words, but I hope you never doubt that you are appreciated.
+                Your smile, your personality and the little things that
+                make you who you are mean so much to me.
+            </p>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE TAGS -->
+    <section class="section pink-section" id="tags">
+        <p class="small-title">TAP AND DISCOVER</p>
+        <h2>Little Things About You 💗</h2>
+        <p class="subtitle">Choose a tag. I have something to tell you.</p>
+
+        <div class="tag-container">
+            <button onclick="showMessage('sunshine')">☀️ Sunshine</button>
+            <button onclick="showMessage('smile')">😊 Your Smile</button>
+            <button onclick="showMessage('comfort')">🫶 My Comfort</button>
+            <button onclick="showMessage('beauty')">🌹 Beautiful Soul</button>
+            <button onclick="showMessage('special')">💗 Special One</button>
+            <button onclick="showMessage('forever')">✨ My Favourite</button>
+        </div>
+
+        <div class="message-display" id="messageDisplay">
+            Your little message will appear here ❤️
+        </div>
+    </section>
+
+    <!-- PHOTO -->
+    <section class="section" id="photos">
+        <p class="small-title">A MEMORY TO KEEP</p>
+        <h2>Us Together 📸</h2>
+
+        <div class="photo-card" onclick="openPhoto()">
+            <img src="https://i.postimg.cc/VL7CBWvx/image-1.jpg" alt="Our special photograph">
+            <p>One of my favourite memories ❤️</p>
+            <span>Click to view</span>
+        </div>
+
+        <div class="lightbox" id="lightbox" onclick="closePhoto()">
+            <span>×</span>
+            <img src="images/our-photo.jpeg" alt="Our photograph">
+        </div>
+    </section>
+
+    <!-- VIDEO -->
+    <section class="section pink-section" id="video">
+        <p class="small-title">A MOMENT IN MOTION</p>
+        <h2>Our Little Movie 🎬</h2>
+
+        <div class="video-card">
+            <video controls playsinline poster="images/our-photo.jpeg">
+                <source src="videos/our-moment.mp4" type="video/mp4">
+                Your browser does not support video.
+            </video>
+        </div>
+        <p class="subtitle">Some moments deserve to be watched again.</p>
+    </section>
+
+    <!-- HEART GAME -->
+    <section class="section" id="game">
+        <p class="small-title">LET'S PLAY SOMETHING</p>
+        <h2>Pick a Heart 💕</h2>
+        <p class="subtitle">Every heart hides a little secret.</p>
+
+        <div class="heart-game">
+            <button onclick="pickHeart(0)">♡</button>
+            <button onclick="pickHeart(1)">♡</button>
+            <button onclick="pickHeart(2)">♡</button>
+            <button onclick="pickHeart(3)">♡</button>
+            <button onclick="pickHeart(4)">♡</button>
+        </div>
+
+        <div class="game-message" id="gameMessage">
+            Pick one, Mary! 🥹
+        </div>
+    </section>
+
+    <!-- LOVE METER -->
+    <section class="section pink-section">
+        <p class="small-title">A VERY IMPORTANT TEST</p>
+        <h2>Mary's Sweetness Meter</h2>
+        <p class="subtitle">Move the slider to measure your cuteness.</p>
+
+        <div class="meter-card">
+            <h3 id="meterNumber">50%</h3>
+            <input type="range" min="0" max="100" value="50"
+                   id="meter" oninput="updateMeter()">
+            <p id="meterText">Still too beautiful to measure! 💗</p>
+        </div>
+    </section>
+
+    <!-- LOVE LETTER -->
+    <section class="section" id="letter">
+        <p class="small-title">SOMETHING FROM MY HEART</p>
+        <h2>A Letter For You 💌</h2>
+
+        <div class="letter-card">
+            <div class="letter-icon">💌</div>
+            <p>My dearest Mary,</p>
+
+            <p>
+                Sometimes I wish you could see yourself through my eyes.
+                Maybe then you would understand just how special you are
+                to me.
+            </p>
+
+            <p>
+                I am grateful for the memories we have made, the laughter,
+                the little moments and everything that makes our story
+                uniquely ours.
+            </p>
+
+            <p>
+                I know neither of us is perfect. Life will have its
+                beautiful days and its difficult ones. But I hope we
+                continue to appreciate the little things, learn from
+                each other and keep choosing kindness.
+            </p>
+
+            <p>
+                Thank you for being part of my life. Never stop smiling,
+                never stop dreaming and never forget how valuable you are.
+            </p>
+
+            <p class="signature">With love, always ❤️</p>
+        </div>
+    </section>
+
+    <!-- FINAL CONFESSION -->
+    <section class="final-section">
+        <div class="final-heart">❤️</div>
+        <p class="small-title">BEFORE YOU GO...</p>
+        <h1>Mary, I Have Something To Tell You</h1>
+
+        <button onclick="revealConfession()">
+            Click For My Final Message 💗
+        </button>
+
+        <div class="confession" id="confession">
+            <h2>It's You, Mary. ❤️</h2>
+            <p>
+                Out of all the people I could have met, I am grateful
+                that our paths crossed. You hold a special place in my
+                heart. I love you, I appreciate you, and I hope you
+                never forget how much you mean to me.
+            </p>
+            <h3>My heart is happy to know you. ❤️</h3>
+        </div>
+
+        <button class="back-top" onclick="scrollToSection('home')">
+            Back to the beginning ↑
+        </button>
+    </section>
+
+    <footer>
+        Made with love, especially for Mary ❤️
+        <p>One little website. So many feelings.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
